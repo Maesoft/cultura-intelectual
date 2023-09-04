@@ -1,0 +1,28 @@
+form{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+#search{
+    width: 200%;
+    height: 37px;
+    padding-left: 15px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #2588c3;
+}
+
+
+.btnBuscar{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #2588c3;
+    border: 1px solid  #207aad ;
+}
+
+.btnBuscar:hover{
+    background-color: #206f9c;
+}
