@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import { productsContext } from '../context/ProductsContext.jsx';
 import { filterProductos } from "../funciones/filterProductos"
 import Search from './Search';
+import BurgerMenu from './BurgerMenu';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
     return (
     <>
       <header>
-        <button>☰</button> 
+         <BurgerMenu/>
         <section className='logoBuscar'>
           <h2>Logo</h2>
           <Search cambiar={setFilters}></Search>
