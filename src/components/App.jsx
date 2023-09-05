@@ -4,9 +4,16 @@ import { useContext, useState } from 'react';
 import { productsContext } from '../context/ProductsContext.jsx';
 import { filterProductos } from "../funciones/filterProductos"
 import Search from './Search';
+import ImageSlider from './ImgSlider';
 
 function App() {
-
+    const containerStyles ={
+      with:"500px",
+      height:"380px",
+      paddingTop:"20px",
+      margin:"0 auto",
+      position: "relative"
+    }
     // Carga y filtra los productos 
     const producto = useContext(productsContext)
     const [filters, setFilters] = useState({
@@ -22,6 +29,17 @@ function App() {
     // Determina si se debe mostrar la sección de resultados de búsqueda
     const showSearchResults = filters.titulo !== "";
 
+    // Función para obtener 10 imágenes de productos
+    const tenProductImages = () => {
+      const tenProductImages = [];
+      
+      for (let i = 0; i < 10 && i < displayedProducts.length; i++) {
+      tenProductImages.push(displayedProducts[i].image);
+      
+       }
+        return tenProductImages;
+     };
+
     return (
     <>
       <header>
@@ -35,9 +53,9 @@ function App() {
  
 
         {!showSearchResults && (
-          <section>
-            <p>Aquí va el carrusel</p>
-          </section>
+          <div style={containerStyles}>
+            <ImageSlider sliders={tenProductImages()}/>
+          </div>
         )}
               {showSearchResults ? (
           <section>
