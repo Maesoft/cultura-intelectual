@@ -5,6 +5,7 @@ import { productsContext } from '../context/ProductsContext.jsx';
 import { filterProductos } from "../funciones/filterProductos"
 import Search from './Search';
 import ImageSlider from './ImgSlider';
+import BurgerMenu from './BurgerMenu';
 
 function App() {
     const containerStyles ={
@@ -43,7 +44,7 @@ function App() {
     return (
     <>
       <header>
-        <button>☰</button> 
+         <BurgerMenu/>
         <section className='logoBuscar'>
           <h2>Logo</h2>
           <Search cambiar={setFilters}></Search>
