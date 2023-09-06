@@ -1,11 +1,8 @@
-import "../styles/Cards.css"
+import React from 'react';
+import '../styles/Cards.css';
 
-
-const Cards = ({ productos,  }) => {
-
-
+const Cards = ({ productos, addToCart }) => {
     return (
-
         <>
             <div className='contCards'>
                 <ul>
