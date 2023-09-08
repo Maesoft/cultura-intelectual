@@ -7,6 +7,7 @@
   import Search from './Search';
   import ImageSlider from './ImgSlider';
   import BurgerMenu from './BurgerMenu';
+  import logo from '../assets/logo.png'
 
   function App() {
 
@@ -70,8 +71,8 @@
       <>
         <BurgerMenu/>
         <header>
+          <img src={logo} alt="Logo"/>
           <section className='logoBuscar'>
-            <h2>Logo</h2>
             <Search cambiar={setFilters}></Search>
           {showCart ? (
             <Cart

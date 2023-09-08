@@ -1,20 +1,26 @@
 *{
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 header {
     width: 100%;
     height: 120px;
-    border-bottom: 4px solid black;
+    background-color: #f0f8ff;
+    border-bottom: 2px solid black;
     display: flex;
     justify-content:flex-start;
     align-items: center;
 }
+header img{
+    margin-left: 22%;
+    width: 10%;
 
+}
 .logoBuscar{
     display: flex;
     width: 70%;
     text-align: center;
-    left: 33%;
+    left: 38%;
     position: absolute;
 }
