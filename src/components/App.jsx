@@ -68,14 +68,13 @@
 
       return (
       <>
+        <BurgerMenu/>
         <header>
-          <BurgerMenu/>
           <section className='logoBuscar'>
             <h2>Logo</h2>
             <Search cambiar={setFilters}></Search>
-          </section>
           {showCart ? (
-              <Cart
+            <Cart
                 cart={cart}
                 totalPrice={getTotalPrice()}
                 onBack={toggleCart}
@@ -83,7 +82,8 @@
               />
             ) : (
               <button onClick={toggleCart} className="cart-button">Cart</button>
-            )}
+              )}
+              </section>
         </header>
   
 

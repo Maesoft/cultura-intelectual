@@ -1,12 +1,11 @@
 form{
     display: flex;
     flex-flow: row nowrap;
-    width: 100%;
+    width: 85%;
 }
 
 #search{
-    width: 200%;
-    height: 37px;
+    width: 40%;
     padding-left: 15px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
