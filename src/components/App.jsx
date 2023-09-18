@@ -8,6 +8,7 @@
   import ImageSlider from './ImgSlider';
   import BurgerMenu from './BurgerMenu';
   import logo from '../assets/logo.png'
+  import Categorias from './Categorias';
 
   function App() {
 
@@ -24,24 +25,25 @@
       // Carga y filtra los productos 
       const producto = useContext(productsContext)
       const [filters, setFilters] = useState({
-        titulo: ""
+        titulo: "",
+        categoria: "all",
+        minPrice: "0"
       })
 
       //filtrado de elementos que se muestran en pantalla
       const filteredProducts = filterProductos(producto, filters)
 
-      // Muestra solo los primeros 10 productos
-      const displayedProducts = filteredProducts.slice(0, 10);
+
   
       // Determina si se debe mostrar la sección de resultados de búsqueda
-      const showSearchResults = filters.titulo !== "";
+      const showSearchResults = filters.titulo !== ""|| filters.categoria !== "all" || filters.minPrice !== "0";
 
       // Función para obtener 10 imágenes de productos
       const tenProductImages = () => {
         const tenProductImages = [];
         
-        for (let i = 0; i < 10 && i < displayedProducts.length; i++) {
-        tenProductImages.push(displayedProducts[i].image);
+        for (let i = 0; i < 10 && i < filteredProducts.length; i++) {
+        tenProductImages.push(filteredProducts[i].image);
         
         }
           return tenProductImages;
@@ -69,7 +71,9 @@
 
       return (
       <>
-        <BurgerMenu/>
+        <BurgerMenu >
+          <Categorias cambiar={setFilters}></Categorias>
+        </BurgerMenu>
         <header>
           <img src={logo} alt="Logo"/>
           <section className='logoBuscar'>
@@ -96,17 +100,15 @@
                 {showSearchResults ? (
             <section>
               <p>Resultado de búsqueda...</p>
+               <Cards productos={filteredProducts} addToCart={addToCart} />
+        
             </section>
           ) : (
             <section>
-              <p>Novedades...</p>
+              <p>novedades...</p>
+              <Cards productos={filteredProducts.slice(0, 10)} addToCart={addToCart} />
             </section>
           )}
-
-        <section>
-        <Cards productos={displayedProducts} addToCart={addToCart} />
-        </section>
-
 
       </>
     )

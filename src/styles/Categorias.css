@@ -1,0 +1,66 @@
+.contCategorias {
+    display: flex;
+    flex-flow: row nowrap;
+    width: auto;
+}
+
+.contPrecio {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+
+}
+
+.contPrecio label {
+    font-weight: bold;
+}
+
+.inputPrice {
+    margin: 0 5px 0 5px;
+}
+
+.contSelect {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.contSelect label {
+    font-weight: bold;
+}
+
+.contBurger {
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .contBurger {
+        display: block;
+    }
+
+    .contCategorias {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: auto;
+        background-color: white;
+        position: fixed;
+        bottom: 85px;
+        left: 10px;
+        border-radius: 5px;
+        padding: 5px;
+        -webkit-box-shadow: 0px -25px 54px -28px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px -25px 54px -28px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px -25px 54px -28px rgba(0, 0, 0, 0.75);
+    }
+
+    .contCategorias.ocultar {
+        display: none;
+    }
+}
