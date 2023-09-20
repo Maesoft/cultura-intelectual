@@ -75,21 +75,22 @@
           <Categorias cambiar={setFilters}></Categorias>
         </BurgerMenu>
         <header>
-          <img src={logo} alt="Logo"/>
           <section className='logoBuscar'>
             <Search cambiar={setFilters}></Search>
-          {showCart ? (
+              </section>
+          <img src={logo} alt="Logo"/>
+        </header>
+          <div className='cartButton'>{showCart ? (
             <Cart
                 cart={cart}
                 totalPrice={getTotalPrice()}
                 onBack={toggleCart}
-                onRemoveItem={removeFromCart} // Pasamos la función de eliminación
+                onRemoveItem={removeFromCart}
               />
             ) : (
               <button onClick={toggleCart} className="cart-button">Cart</button>
               )}
-              </section>
-        </header>
+              </div>
   
 
           {!showSearchResults && (
