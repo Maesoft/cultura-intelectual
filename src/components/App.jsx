@@ -9,7 +9,8 @@
   import BurgerMenu from './BurgerMenu';
   import logo from '../assets/logo.png'
   import Categorias from './Categorias';
-
+  import Footer from './Footer';
+  
   function App() {
 
     const [cart, setCart] = useState([]);
@@ -108,6 +109,7 @@
             <section>
               <p>novedades...</p>
               <Cards productos={filteredProducts.slice(0, 10)} addToCart={addToCart} />
+              <Footer/>
             </section>
           )}
 

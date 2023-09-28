@@ -1,5 +1,6 @@
 .contCategorias {
     display: flex;
+    flex-direction: column;
     flex-flow: row nowrap;
     width: auto;
 }
