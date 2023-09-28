@@ -9,6 +9,8 @@
   import BurgerMenu from './BurgerMenu';
   import logo from '../assets/logo.png'
   import Categorias from './Categorias';
+  import User from './User';
+  import Footer from './Footer';
 
   function App() {
 
@@ -80,6 +82,10 @@
               </section>
           <img src={logo} alt="Logo"/>
         </header>
+          <div className='userBTN'>
+            <User>              
+            </User>
+          </div>
           <div className='cartButton'>{showCart ? (
             <Cart
                 cart={cart}
@@ -108,6 +114,7 @@
             <section>
               <p>novedades...</p>
               <Cards productos={filteredProducts.slice(0, 10)} addToCart={addToCart} />
+              <Footer/>
             </section>
           )}
 

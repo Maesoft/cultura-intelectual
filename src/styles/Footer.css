@@ -1,0 +1,37 @@
+.footer{
+    padding: 20px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.col33{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.col33 a{
+    text-decoration: none;
+    color: white;
+}
+.col33 a:hover{
+    text-decoration: none;
+    color: red;
+}
+.col33 > div img{
+    margin: 8px;
+    width: 32px;
+}
+  
+.col33 > div img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.col33 >  img{
+    width: 128px;
+    filter: invert();
+}
