@@ -9,6 +9,8 @@
   import BurgerMenu from './BurgerMenu';
   import logo from '../assets/logo.png'
   import Categorias from './Categorias';
+  import Footer from './Footer';
+  import User from './user';
 
   function App() {
 
