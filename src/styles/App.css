@@ -42,8 +42,17 @@ header img{
     padding: 1em; 
   }
 
-  .userBTN{
-    display: flex;
-    justify-content: center; 
-    padding: 1em;
+  .userButton{
+    background-color: #1117e3;
+    text-decoration: none;
+    color: #ffffff; 
+    padding: 4px;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    filter: drop-shadow(0px 0px 1px);
   }
+
+  .userButton:hover{
+    background-color: #ffffff;
+    color: #1117e3;
+}

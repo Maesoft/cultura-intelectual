@@ -12,7 +12,7 @@ const user = ({children}) => {
 
   if(!visibility)return (
   <div className="userBack" onClick={toggleVisibility}>
-     <button>usuario</button>
+     <button className='userButton'>usuario</button>
   </div>)
   
   return(
