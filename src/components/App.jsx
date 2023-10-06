@@ -10,7 +10,7 @@
   import logo from '../assets/logo.png'
   import Categorias from './Categorias';
   import Footer from './Footer';
-  import User from './user';
+  import carro from '../assets/carro.png'
 
   function App() {
 
@@ -20,7 +20,7 @@
         const containerStyles ={
         with:"500px",
         height:"380px",
-        paddingTop:"20px",
+        paddingTop:"0px",
         margin:"0 auto",
         position: "relative"
       }
@@ -82,10 +82,7 @@
               </section>
           <img src={logo} alt="Logo"/>
         </header>
-          <div className='userBTN'>
-            <User>              
-            </User>
-          </div>
+
           <div className='cartButton'>{showCart ? (
             <Cart
                 cart={cart}
@@ -94,10 +91,12 @@
                 onRemoveItem={removeFromCart}
               />
             ) : (
-              <button onClick={toggleCart} className="cart-button">Cart</button>
+              <button onClick={toggleCart} className="cart-button"><img className='carroCompra' src={carro} alt="" /></button>
               )}
               </div>
-  
+              <div className='userBTN'>
+
+          </div>
 
           {!showSearchResults && (
             <div style={containerStyles}>
@@ -106,13 +105,13 @@
           )}
                 {showSearchResults ? (
             <section>
-              <p>Resultado de búsqueda...</p>
+              <p className='pBusqueda'>Resultado de búsqueda...</p>
                <Cards productos={filteredProducts} addToCart={addToCart} />
-        
+              <Footer></Footer>
             </section>
           ) : (
             <section>
-              <p>novedades...</p>
+              <p className='pBusqueda'>Novedades...</p>
               <Cards productos={filteredProducts.slice(0, 10)} addToCart={addToCart} />
               <Footer/>
             </section>

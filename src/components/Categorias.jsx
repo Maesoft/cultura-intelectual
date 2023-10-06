@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "../styles/Categorias.css"
 const Categorias = ({ cambiar }) => {
 
-    const [price, setPrice] = useState("0")
+    const [price, setPrice] = useState("1")
     function handlerPrice(e) {
         setPrice(e.target.value)
 

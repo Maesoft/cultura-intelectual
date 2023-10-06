@@ -1,40 +1,33 @@
 import {React, useState} from 'react'
-import '../styles/user.css'
+import '../styles/User.css'
+import NavSecun from './NavSecun'
+import Footer from './Footer'
+import logo from '../assets/logo.png'
 
+const User = () => {
 
-
-const user = ({children}) => {
-    const [visibility, setVisibility]=useState(false);
-
-    const toggleVisibility=()=>{
-        setVisibility(!visibility)
-    }
-
-  if(!visibility)return (
-  <div className="userBack" onClick={toggleVisibility}>
-     <button className='userButton'>usuario</button>
-  </div>)
-  
   return(
-  <div className="userUI">
-      <button className='btnUserClose'onClick={toggleVisibility}>X</button>
+  <>
+  
+    
+    <NavSecun></NavSecun>
       <div className='containerUser'>
         <div className='infoBox'>
             <div className='imgInfo'>
-                <img src="user.image" alt="user Info" />
-                <button>edit</button>
+                <img className='imgEditUs' src={logo} alt="user Info" />
+                <button className='btnEditImg'>Edit</button>
             </div>
             <div className='infoText'>
-                <h4>Name:</h4>
-                <button>edit</button>
+                <h4>Name: test</h4>
+                <button>Edit</button>
                 <h4>E-mail:</h4>
-                <button>edit</button>
+                <button>Edit</button>
                 <h4>Contraseña:</h4>
-                <button>edit</button>
+                <button>Edit</button>
             </div>
         </div>
         <div className='historial'>
-            <h1 className='histTypo'>Historial.</h1>
+            <h1 className='histTypo'>Historial</h1>
               <div className='tableBack'>
               <tbody>
                 <tr>
@@ -74,9 +67,11 @@ const user = ({children}) => {
               </div>
         </div>
       </div>
-      {children}
-  </div>
-  )}
+      
+    <Footer/>
+  </>
+
+  );}
 
 
-export default user
+export default User

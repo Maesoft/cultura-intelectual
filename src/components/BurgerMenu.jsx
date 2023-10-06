@@ -1,35 +1,50 @@
-import {React, useState} from 'react'
-import '../styles/BurgerMenu.css'
-import burgerIcon from '../assets/burger.svg'
-import Categorias from './Categorias';
-const BurgerMenu = ({children}) => {
-    const [visibility, setVisibility]=useState(false);
+import React, { useState } from 'react';
+import '../styles/BurgerMenu.css';
+import burgerIcon from '../assets/burger.svg';
+import ContPerfil from './ContPerfil';
 
-    const toggleVisibility=()=>{
-        setVisibility(!visibility)
-    }
+const BurgerMenu = ({ children }) => {
+  const [visibility, setVisibility] = useState(false);
+  const [showProfile, setShowProfile] = useState(true);
 
-  if(!visibility)return (
-  <div className="burger-icon" onClick={toggleVisibility}>
-     <img src={burgerIcon} alt="Menu Hamburguesa"/>
-  </div>)
-  
-  return(
-  <div className="burger-bar">
-      <button className='btnBurgerClose'onClick={toggleVisibility}>&#128502;</button>
-      <div className='container'>
-      <a id="logIn" href="#">Iniciar Sesion</a>
-      <a id="createAccount" href="#">Crear Cuenta</a>
+  const toggleVisibility = () => {
+    setVisibility(!visibility);
+  };
+
+  const toggleProfile = () => {
+    setShowProfile(!showProfile);
+  };
+
+  if (!visibility) {
+    return (
+      <div className="burger-icon" onClick={toggleVisibility}>
+        <img src={burgerIcon} alt="Menu Hamburguesa" />
       </div>
-      <p>Para acceder a mas funcionalidades, debes registrarte o iniciar sesion.</p>
-     <div className='search-container'>
-         <p>Buscar Libro</p>
-        <input type="text" id="inputSearch" placeholder='Ingrese el titulo'/>
-        <button className="btnBurgerBar" type="button">&#128269;</button>
+    );
+  }
+
+  return (
+    <div className="burger-bar">
+      <button className="btnBurgerClose" onClick={toggleVisibility}>
+        &#128502;
+      </button>
+      <div className="container">
+        {showProfile ? (
+          <ContPerfil></ContPerfil>
+        ) : (
+          <a id="logIn" href="http://localhost:5173/login">
+            Iniciar Sesión
+          </a>
+        )}
+        {!showProfile && ( 
+          <a id="createAccount" href="http://localhost:5173/register">
+            Crear Cuenta
+          </a>
+        )}
       </div>
-      {children}
-  </div>
-  )}
+      <div className="s">{children}</div>
+    </div>
+  );
+};
 
-
-export default BurgerMenu
+export default BurgerMenu;

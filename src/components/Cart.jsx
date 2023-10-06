@@ -31,7 +31,7 @@ function Cart({ cart, totalPrice, onBack, onRemoveItem }) {
 
   return (
     <div className='cart'>
-      <h2 className='name'>Cart</h2>
+      <h2 className='name'>Compra</h2>
       {cart.length === 0 ? (
         <p className='name'>the cart it's empty...</p>
       ) : (
@@ -55,7 +55,10 @@ function Cart({ cart, totalPrice, onBack, onRemoveItem }) {
         </>
       )}
       <p className='pPrice2'>Total Price: ${totalPrice}</p>
-      <button onClick={onBack}>close</button>
+        <div className='cont-btncart'>
+          <button className='btnCloseCart' onClick={onBack}>close</button>
+          <button className='btnBuy'>Buy</button>
+        </div>
     </div>
   );
 }

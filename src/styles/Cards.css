@@ -1,8 +1,7 @@
 .contCards{
     width: 100%;
     height: auto;
-    padding-top: 100px;
-    background-color: rgba(217, 223, 221, 0.596);
+    padding-top: 10px;
 }
 h1{margin: 0 0 30px 60px;}
 
@@ -24,7 +23,8 @@ ul{
     width: 16%;
     height: 350px;
     background-color: white;
-    border-radius: 2px;
+    border: 1px solid rgb(236, 235, 235);
+    border-radius: 5px;
     padding: 10px;
     -webkit-box-shadow: 9px 10px 6px -4px rgba(184,182,182,1);
     -moz-box-shadow: 9px 10px 6px -4px rgba(184,182,182,1);

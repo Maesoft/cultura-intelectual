@@ -20,8 +20,8 @@ const Footer = () => {
         <h3> Copyrigth © 2023 - Cultura Intelectual Team</h3>
         </div>
         <div className='col33'>
-            <a href="#">Iniciar Sesion</a>
-            <a href="#">Crear Cuenta</a>
+            <a href="http://localhost:5173/login">Iniciar Sesion</a>
+            <a href="http://localhost:5173/login">Crear Cuenta</a>
             <a href="#">Buscar Libro</a>
         </div>
     </div>

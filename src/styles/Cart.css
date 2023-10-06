@@ -1,5 +1,5 @@
 .name{
-    color: aliceblue;
+    color: rgb(89, 138, 180);
 }
 .contCards1{
     display: flex;
@@ -52,11 +52,42 @@
 
 .pPrice2{
     padding: 1em;
-    color: aliceblue;
+    color: rgb(89, 138, 180);
     font-weight: bolder;
     font-size: 100%;
 }
 
 .pTitle1{
     font-size: 100%;
+}
+
+.cont-btncart{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btnBuy{
+    width: 15%;
+    height: 28px;
+    background-color: rgb(167, 247, 167);
+    border-radius: 8px;
+    border: 1px solid rgb(128, 209, 128);
+    cursor: pointer;
+}
+.btnCloseCart{
+    width: 15%;
+    height: 28px;
+    background-color: rgb(226, 129, 129);
+    border-radius: 8px;
+    border: 1px solid rgb(226, 114, 114);
+    cursor: pointer;
+}
+
+.btnBuy:hover{
+    background-color: rgb(104, 245, 104);
+}
+.btnCloseCart:hover{
+    background-color: rgb(224, 83, 83);
+
 }
