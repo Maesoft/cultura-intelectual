@@ -38,14 +38,14 @@
 
   
       // Determina si se debe mostrar la sección de resultados de búsqueda
-      const showSearchResults = filters.titulo !== ""|| filters.categoria !== "all" || filters.minPrice !== "0";
+      const showSearchResults = filters.titulo !== "" || filters.minPrice !== "0";
 
       // Función para obtener 10 imágenes de productos
       const tenProductImages = () => {
         const tenProductImages = [];
         
         for (let i = 0; i < 10 && i < filteredProducts.length; i++) {
-        tenProductImages.push(filteredProducts[i].image);
+        tenProductImages.push(filteredProducts[i].imagen);
         
         }
           return tenProductImages;
@@ -63,7 +63,7 @@
     
       //Funcion del precio total
       const getTotalPrice = () => {
-        return cart.reduce((total, item) => total + item.price, 0);
+        return cart.reduce((total, item) => total + item.precio, 0);
       };
     
       //Funcion para mostrar y esconder el contenido del carrito

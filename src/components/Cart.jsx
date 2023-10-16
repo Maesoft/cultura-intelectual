@@ -40,10 +40,10 @@ function Cart({ cart, totalPrice, onBack, onRemoveItem }) {
             <ul className='ulCards'> 
             {cart.map(item => (
                 <li className='liCards1' key={item.id}>
-                <img className='imgCards1' src={item.image} alt="" />
+                <img className='imgCards1' src={item.imagen} alt="" />
                 <div className='contInfo1'>
-                <h3 className='pTitle1'>{item.title}</h3>
-                <p className='pPrice1'><span>$</span>{item.price}</p>
+                <h3 className='pTitle1'>{item.titulo}</h3>
+                <p className='pPrice1'><span>$</span>{item.precio}</p>
                 </div>
                 <button onClick={() => handleRemoveItem(item.id)}>Remove</button>                
               </li>              

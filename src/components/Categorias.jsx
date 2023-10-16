@@ -31,10 +31,10 @@ const Categorias = ({ cambiar }) => {
                     <label htmlFor="categorias">Categorias  </label>
                     <select id="categorias" onChange={handleCategoria}>
                         <option value="all">Todos los productos</option>
-                        <option value="men's clothing">Ropa de hombres</option>
-                        <option value="women's clothing">Ropa de mujer</option>
-                        <option value="jewelery">Joyeria</option>
-                        <option value="electronics">Electronica</option>
+                        <option value="ficcion">Ficcion</option>
+                        <option value="aventura">Aventura</option>
+                        <option value="romance">Romance</option>
+                        <option value="accion">Accion</option>
 
                     </select>
                 </div>

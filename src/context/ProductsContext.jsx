@@ -8,9 +8,10 @@ export const ProductProvide = ({ children }) => {
   useEffect(() => {
 
     {
-      fetch("https://fakestoreapi.com/products")
+      fetch("http://localhost:3000/libros") //https://fakestoreapi.com/products
       .then(res => res.json())
       .then(data => { setData(data) })
+      
     }
 
   }, [])
