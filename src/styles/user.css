@@ -18,10 +18,10 @@
     background-color: #f0f8ff;
     border: 2px solid rgb(187, 227, 233);
     border-radius: 15px;
-    padding: 10px 2px;
+    padding: 30px 2px;
     justify-content: space-between;
     height: auto;
-    padding: 20px;
+    padding: 50px;
     align-items: baseline;
 }
 .btnEditImg{
@@ -114,14 +114,12 @@ td {
 }
 
 .containerUser button{
+    width: 15px;
+    height: 18px;
     background-color: #2588c3;
-    text-decoration: none;
-    color: black; 
-    padding: 4px;
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    border-radius: 5px;
+    border-radius: 2px;
     border: 1px solid  #207aad ;
-
+    cursor: pointer;
 }
 
 .containerUser button:hover{
@@ -134,4 +132,12 @@ td {
     font-size: 18px;
     width: 19px;
     cursor: pointer;
+}
+
+.edit{
+    width: 15px;
+}
+.contData{
+    display: flex;
+    margin-bottom: 20px;
 }

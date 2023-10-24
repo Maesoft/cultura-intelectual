@@ -39,6 +39,8 @@ ul{
 
 
 .contCarroCompras{
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
 
@@ -70,6 +72,16 @@ ul{
     font-weight: bolder;
 }
 
+.addCart{
+    padding: 3px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #2588c3;
+    border: 1px solid  #207aad ;
+    cursor: pointer;
+    font-weight: 700;
+    color: #dbdbdb;
+}
 
 
 @media (max-width: 950px) {

@@ -3,7 +3,7 @@ import '../styles/User.css'
 import NavSecun from './NavSecun'
 import Footer from './Footer'
 import logo from '../assets/logo.png'
-
+import edit from '../assets/edit.png'
 const User = () => {
 
   return(
@@ -15,15 +15,21 @@ const User = () => {
         <div className='infoBox'>
             <div className='imgInfo'>
                 <img className='imgEditUs' src={logo} alt="user Info" />
-                <button className='btnEditImg'>Edit</button>
+                <button className='btnEditImg'><img className='edit' src={edit} alt="" srcset="" /></button>
             </div>
             <div className='infoText'>
-                <h4>Name: test</h4>
-                <button>Edit</button>
+               <div className='contData'>
+               <h4>Nombre:</h4>
+                <button><img className='edit' src={edit} alt="" srcset="" /></button>
+               </div>
+                <div className='contData'>
                 <h4>E-mail:</h4>
-                <button>Edit</button>
+                <button><img className='edit' src={edit} alt="" srcset="" /></button>
+                </div>
+                <div className='contData'>
                 <h4>Contraseña:</h4>
-                <button>Edit</button>
+                <button><img className='edit' src={edit} alt="" srcset="" /></button>
+                </div>
             </div>
         </div>
         <div className='historial'>

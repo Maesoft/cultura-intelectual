@@ -14,7 +14,7 @@ const Cards = ({ productos, addToCart }) => {
                                 <p className='pPrice'><span>$</span>{item.precio}</p>
                             </div>
                             <div className='contCarroCompras'>
-                            <button onClick={() => addToCart(item)}>Add to cart</button>
+                            <button className='addCart' onClick={() => addToCart(item)}>Comprar</button>
                             </div>
                         </li>)
                     }

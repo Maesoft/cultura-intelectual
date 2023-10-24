@@ -45,6 +45,8 @@
 }
 
 .btnLogin{
+    color: #f0f8ff;
+    font-weight: 600;
     margin: auto;
     margin-top: 10px;
     width: 50%;

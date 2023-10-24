@@ -10,7 +10,7 @@
   import logo from '../assets/logo.png'
   import Categorias from './Categorias';
   import Footer from './Footer';
-  import carro from '../assets/carro.png'
+  import carro from '../assets/carro2.png'
 
   function App() {
 
@@ -19,7 +19,7 @@
     
         const containerStyles ={
         with:"500px",
-        height:"380px",
+        height:"300px",
         paddingTop:"0px",
         margin:"0 auto",
         position: "relative"

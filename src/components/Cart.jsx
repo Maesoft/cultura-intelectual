@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/App.css';
-import Cards from './Cards';
 import '../styles/Cart.css';
 
 
@@ -31,9 +30,9 @@ function Cart({ cart, totalPrice, onBack, onRemoveItem }) {
 
   return (
     <div className='cart'>
-      <h2 className='name'>Compra</h2>
+      <h2 className='name'>Compras</h2>
       {cart.length === 0 ? (
-        <p className='name'>the cart it's empty...</p>
+        <p className='name'>Su carro de compras esta vacio...</p>
       ) : (
         <>
           <div className='contCards1'>
@@ -45,7 +44,7 @@ function Cart({ cart, totalPrice, onBack, onRemoveItem }) {
                 <h3 className='pTitle1'>{item.titulo}</h3>
                 <p className='pPrice1'><span>$</span>{item.precio}</p>
                 </div>
-                <button onClick={() => handleRemoveItem(item.id)}>Remove</button>                
+                <button className='btnEliminar' onClick={() => handleRemoveItem(item.id)}>Eliminar</button>                
               </li>              
             )
           )
@@ -54,10 +53,10 @@ function Cart({ cart, totalPrice, onBack, onRemoveItem }) {
         </div>
         </>
       )}
-      <p className='pPrice2'>Total Price: ${totalPrice}</p>
+      <p className='pPrice2'>Total : ${totalPrice}</p>
         <div className='cont-btncart'>
-          <button className='btnCloseCart' onClick={onBack}>close</button>
-          <button className='btnBuy'>Buy</button>
+          <button className='btnCloseCart' onClick={onBack}>Continuar Comprando</button>
+          <button className='btnBuy'>Finalizar Compra</button>
         </div>
     </div>
   );

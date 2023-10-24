@@ -55,9 +55,9 @@ header img{
     width: 100%;
     height: auto;
     cursor: pointer;
-    border: 1px solid rgb(219, 208, 208);
-    background-color: #d4e7f8;
-  }
+    border: 1px solid  #207aad ;
+    background-color: #2588c3;
+    }
 
   .userButton{
     background-color: #1117e3;
@@ -75,6 +75,7 @@ header img{
 }
 
 .carroCompra{
+  padding:4px 0 ;
   width: 30px;
 }
 

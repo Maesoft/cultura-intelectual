@@ -68,26 +68,45 @@
 }
 
 .btnBuy{
-    width: 15%;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    width: 25%;
     height: 28px;
-    background-color: rgb(167, 247, 167);
-    border-radius: 8px;
-    border: 1px solid rgb(128, 209, 128);
+    border-radius: 5px;
+    background-color: #2588c3;
+    border: 1px solid  #207aad ;
     cursor: pointer;
 }
 .btnCloseCart{
-    width: 15%;
+    font-size: 15px;
+    font-weight: 600;
+    width: 25%;
     height: 28px;
-    background-color: rgb(226, 129, 129);
-    border-radius: 8px;
-    border: 1px solid rgb(226, 114, 114);
+    background-color: white;
+    border-radius: 5px;
+    color: #207aad  ;
+    border: 1px solid  #207aad ;
     cursor: pointer;
 }
 
 .btnBuy:hover{
-    background-color: rgb(104, 245, 104);
+    background-color: #207aad
 }
 .btnCloseCart:hover{
-    background-color: rgb(224, 83, 83);
+    background-color: #2588c3;
+    border: 1px solid  #207aad ;
+    color: white;
+}
 
+.btnEliminar{
+    padding: 3px;
+    border-radius: 3px;
+    background-color: #2588c3;
+    border: 1px solid  #207aad ;
+    color: white;
+    cursor: pointer;
+}
+.btnEliminar:hover{
+background-color: #207aad;
 }
