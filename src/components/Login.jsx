@@ -3,22 +3,36 @@ import logo from '../assets/logo.png'
 import back from '../assets/back.png'
 import Footer from './Footer';
 import NavSecun from './NavSecun';
+import { useState } from 'react';
 const URL='https://647683b09233e82dd53a1337.mockapi.io/'
 
 function Login() {
+  const [notification, setNotification]=useState('');
+
     const handleSubmitSignIn=async(e)=>{
       e.preventDefault();
       const inputUserLogin=document.getElementById('username-login').value;
       const inputPassLogin=document.getElementById('password-login').value;
-      let notification=document.getElementsByClassName('.notification').innerText;
       const res = await fetch(URL+'/users')
       const parsed = await res.json()
       const auth= parsed.find(usr => usr.user_name === inputUserLogin && usr.password === inputPassLogin )
-      auth? notification='Session iniciada': notification='Usuario y/o contraseña erroneo/s';
+      auth? setNotification('Session iniciada'): setNotification('Usuario y/o contraseña erroneo/s')
+      document.getElementById('notification').innerText = auth ? 'Session iniciada' : 'Usuario y/o contraseña erroneo/s';
     }
-    const handleSubmitSignUp=(e)=>{
+    const handleSubmitSignUp=async(e)=>{
       e.preventDefault();
-      console.log('Creando usuario');
+      const newUser={
+        'user_name':document.getElementById('username-signup').value,
+        'password':document.getElementById('password-signup').value,
+        'e-mail':document.getElementById('email-signup').value
+      }
+      const res = await fetch(URL+'/users',{
+        method:'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(newUser)
+      })
+      const parsed= await res.json();
+      console.log(parsed);
     }
 
     return (
@@ -38,7 +52,7 @@ function Login() {
               <input className='inputLogin' type="password" id="password-login"/>
             </div>
             <div>
-              <p className="notification">sdfsdfsdf</p>
+              <p id="notification"></p>
             <button className='btnLogin' type="submit">Ingresar</button>
             </div>
           </form>
