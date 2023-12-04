@@ -1,14 +1,14 @@
 import { createContext, useState, useEffect } from "react";
 
-export const productsContext = createContext({})
+export const usersContext = createContext({})
 
-export const ProductProvide = ({ children }) => {
+export const UserProvide = ({ children }) => {
   const [data, setData] = useState([])
 
   useEffect(() => {
 
     {
-      fetch("http://localhost:3000/libros") 
+      fetch("https://api.escuelajs.co/api/v1/users") 
       .then(res => res.json())
       .then(data => { setData(data) })
       
@@ -17,8 +17,8 @@ export const ProductProvide = ({ children }) => {
   }, [])
 
   return (
-    <productsContext.Provider value={data}>
+    <usersContext.Provider value={data}>
       {children}
-    </productsContext.Provider>
+    </usersContext.Provider>
   )
 }

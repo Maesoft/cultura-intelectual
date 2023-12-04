@@ -21,7 +21,7 @@
     padding: 30px 2px;
     justify-content: space-between;
     height: auto;
-    padding: 50px;
+    padding: 20px;
     align-items: baseline;
 }
 .btnEditImg{
@@ -140,4 +140,13 @@ td {
 .contData{
     display: flex;
     margin-bottom: 20px;
+}
+
+#gcambio{
+   width: 100px;
+   height: 40px;
+    background-color: #2588c3;
+    border-radius: 2px;
+    border: 1px solid  #207aad ;
+    cursor: pointer;
 }

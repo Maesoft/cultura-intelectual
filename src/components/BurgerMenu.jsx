@@ -2,19 +2,21 @@ import React, { useState } from 'react';
 import '../styles/BurgerMenu.css';
 import burgerIcon from '../assets/burger.svg';
 import ContPerfil from './ContPerfil';
+import { useAuth } from '../context/AuthContext';
 
 const BurgerMenu = ({ children }) => {
+  const  {authenticated,user} = useAuth()
   const [visibility, setVisibility] = useState(false);
-  const [showProfile, setShowProfile] = useState(true);
+  const [showProfile, setShowProfile] = useState(authenticated);
+ console.log(authenticated)
 
   const toggleVisibility = () => {
     setVisibility(!visibility);
   };
 
-  const toggleProfile = () => {
-    setShowProfile(!showProfile);
-  };
 
+
+  
   if (!visibility) {
     return (
       <div className="burger-icon" onClick={toggleVisibility}>
@@ -24,20 +26,22 @@ const BurgerMenu = ({ children }) => {
   }
 
   return (
+    
     <div className="burger-bar">
+      
       <button className="btnBurgerClose" onClick={toggleVisibility}>
         &#128502;
       </button>
       <div className="container">
         {showProfile ? (
-          <ContPerfil></ContPerfil>
+          <ContPerfil img={user.avatar}></ContPerfil>
         ) : (
           <a id="logIn" href="http://localhost:5173/login">
             Iniciar Sesión
           </a>
         )}
         {!showProfile && ( 
-          <a id="createAccount" href="http://localhost:5173/register">
+          <a id="createAccount" href="http://localhost:5173/register" >
             Crear Cuenta
           </a>
         )}

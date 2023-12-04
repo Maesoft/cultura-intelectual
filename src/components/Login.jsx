@@ -3,37 +3,41 @@ import logo from '../assets/logo.png'
 import back from '../assets/back.png'
 import Footer from './Footer';
 import NavSecun from './NavSecun';
-import { useState } from 'react';
-const URL='https://647683b09233e82dd53a1337.mockapi.io/'
+import { useState, useContext, useEffect } from 'react';
+import { usersContext } from '../context/UsersContext';
+import { useNavigate } from 'react-router-dom';  // Cambiado a useNavigate
+import { useAuth } from '../context/AuthContext';
 
 function Login() {
-  const [notification, setNotification]=useState('');
+  const users = useContext(usersContext)
+  
+  const navigate = useNavigate();
+// ----------------------
+const [username, setUsername] = useState('');
+const [password, setPassword] = useState('');
+const [authenticated, setAuthenticated] = useState(false);
+const [error, setError] = useState('');
 
-    const handleSubmitSignIn=async(e)=>{
-      e.preventDefault();
-      const inputUserLogin=document.getElementById('username-login').value;
-      const inputPassLogin=document.getElementById('password-login').value;
-      const res = await fetch(URL+'/users')
-      const parsed = await res.json()
-      const auth= parsed.find(usr => usr.user_name === inputUserLogin && usr.password === inputPassLogin )
-      auth? setNotification('Session iniciada'): setNotification('Usuario y/o contraseña erroneo/s')
-      document.getElementById('notification').innerText = auth ? 'Session iniciada' : 'Usuario y/o contraseña erroneo/s';
+const { login } = useAuth();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Busca un usuario con las credenciales proporcionadas
+    const user = users.find(
+      (u) => u.name === username && u.password === password
+    );
+
+    if (user) {
+      login(user);
+      console.log('Usuario autenticado:', user);
+      navigate('/');
+    } else {
+      setError('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
+      console.log('Error de autenticación');
     }
-    const handleSubmitSignUp=async(e)=>{
-      e.preventDefault();
-      const newUser={
-        'user_name':document.getElementById('username-signup').value,
-        'password':document.getElementById('password-signup').value,
-        'e-mail':document.getElementById('email-signup').value
-      }
-      const res = await fetch(URL+'/users',{
-        method:'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify(newUser)
-      })
-      const parsed= await res.json();
-      console.log(parsed);
-    }
+  };
+
 
     return (
     <>
@@ -42,14 +46,16 @@ function Login() {
         <div className='border-form'>
         <div className='cont-ini cont-iniB'>
           <h2>Iniciar Sesión</h2>
-          <form  className='formLogin' onSubmit={handleSubmitSignIn} >
+          <form  className='formLogin' onSubmit={handleLogin}  >
             <div>
               <label className="labelLogin" htmlFor="username-login">Usuario</label>
-              <input className='inputLogin' type="text" id="username-login"/>
+              <input className='inputLogin' type="text" id="username-login"             value={username}
+            onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div>
               <label className="labelLogin" htmlFor="password-login">Contraseña</label>
-              <input className='inputLogin' type="password" id="password-login"/>
+              <input className='inputLogin' type="password" id="password-login"  value={password}
+            onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div>
               <p id="notification"></p>
@@ -60,7 +66,7 @@ function Login() {
 
         <div className='cont-ini'>
           <h2>Crear Cuenta</h2>
-          <form className='formLogin' onSubmit={handleSubmitSignUp}>
+          <form className='formLogin' >
             <div>
               <label className="labelLogin" htmlFor="username-signup">Usuario</label>
               <input

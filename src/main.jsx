@@ -2,8 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './components/App.jsx'
 import Login from "./components/Login.jsx"
-import User from './components/user.jsx'
+import User from './components/User.jsx'
+import { UserProvide } from './context/UsersContext.jsx'
 import { ProductProvide } from './context/ProductsContext.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -23,8 +25,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ProductProvide>
-    <RouterProvider router={router}/>
-    </ProductProvide>
+    <AuthProvider>
+      <UserProvide>
+        <ProductProvide>
+          <RouterProvider router={router}/>
+        </ProductProvide>
+      </UserProvide>
+    </AuthProvider>
   </React.StrictMode>,
 )

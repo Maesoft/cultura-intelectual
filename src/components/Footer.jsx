@@ -4,6 +4,7 @@ import facebook from '../assets/facebook_icon.svg'
 import instagram from '../assets/Instagram_icon.png'
 import whatsapp from '../assets/WhatsApp_icon.png'
 import logo from '../assets/logo.png'
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='footer'>
@@ -20,9 +21,11 @@ const Footer = () => {
         <h3> Copyrigth © 2023 - Cultura Intelectual Team</h3>
         </div>
         <div className='col33'>
-            <a href="http://localhost:5173/login">Iniciar Sesion</a>
-            <a href="http://localhost:5173/login">Crear Cuenta</a>
-            <a href="#">Buscar Libro</a>
+        <Link to="/login">Iniciar sesión</Link>
+        <Link to="/login">Crear Cuenta</Link>
+        <Link to="/">Bucar libro</Link> 
+
+           
         </div>
     </div>
   )
